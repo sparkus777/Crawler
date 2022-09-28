@@ -1,14 +1,17 @@
 #!/usr/bin/env php
 <?php
-function crawl($url,$dept = 2) {
-    if($dept > 0){
+function crawl(string $url, int $dept): void
+{
+//    if($dept > 0){
         $html = file_get_contents($url);
-        preg_match_all('~<a.*?href=:(.*?)".*?>',$html,$matches);
-        foreach ($matches[1] as $newurl)
-        {
-            crawl($newurl, $dept-1);
-        }
-        file_put_contents('results.html',"\n\n".$html."\n\n",FILE_APPEND);
-    }
+        preg_match_all('/<img/',$html,$matches);
+//            foreach ($matches[1] as $newurl)
+//            {
+//                crawl($newurl, $dept-1);
+//            }
+            var_dump($matches);
+
+        file_put_contents('results.html',"\n\n".$matches."\n\n",FILE_APPEND);
+//    }
 }
-crawl('https://www.php.net/manual/en/function.file-put-contents.php',2);
+crawl($argv[1],1);
