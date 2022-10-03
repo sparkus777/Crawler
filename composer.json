@@ -1,2 +1,13 @@
 {
+  "name": "sparkus777/crawler",
+  "type": "project",
+  "description": "",
+  "keywords": ["crawler", "sparkus777"],
+  "license": "MIT",
+    "require-dev": {
+        "symfony/var-dumper": "^6.1"
+    },
+  "require": {
+    "ext-dom": "*"
+  }
 }
