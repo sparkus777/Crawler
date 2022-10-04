@@ -108,6 +108,7 @@ function parser(string $html, DOMDocument $dom): array
 
 /**
  * @param array $result
+ * @param float $totalTime
  * @return void
  */
 function makeReport(array $result, float $totalTime): void
